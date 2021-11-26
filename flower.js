@@ -1,8 +1,8 @@
-bench_image = "";
+car_image = "";
 objects = "";
-status3 = "";
+status4 = "";
 function preload() {
-    bench_image = loadImage("bench.jpg");
+    car_image = loadImage("flower.jpg");
 }
 
 function setup() {
@@ -14,18 +14,18 @@ function setup() {
 
 function modelLoaded() {
     console.log("Model is Loaded")
-    status3 = true;
-    objectDetector.detect(bench_image, gotResult);
+    status4 = true;
+    objectDetector.detect(clock_image, gotResult);
 }
 
 function draw() {
-    image(bench_image, 0, 0, 500, 370);
+    image(car_image, 0, 0, 500, 370);
 
-    if (status3 != "") {
+    if (status4 != "") {
 
         for (i = 0; i < objects.length; i++) {
             document.getElementById("status").innerHTML = "Status: Objects Detected";
-            document.getElementById("objects3").innerHTML = "There is 1 Object in the image from which cocossd model has detected 1 object."
+            document.getElementById("objects4").innerHTML = "There is 1 big Object in the image from which cocossd model has detected 1 object."
             fill("#ff0000");
             percent = floor(objects[i].confidence * 100);
             text(objects[i].label + " " + percent + " % ", objects[i].x + 15 ,  objects[i].y + 15);
@@ -35,7 +35,6 @@ function draw() {
         }
     }
 }
-
 
 function gotResult(error, results) {
     if (error) {
