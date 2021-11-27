@@ -25,7 +25,7 @@ function draw() {
 
         for (i = 0; i < objects.length; i++) {
             document.getElementById("status").innerHTML = "Status: Objects Detected";
-            document.getElementById("objects5").innerHTML = "There is 1 Object in the image from which cocossd model has detected 1 object."
+            document.getElementById("objects5").innerHTML = "There are 3 Objects in the image from which cocossd model has detected 2 objects."
             fill("#ff0000");
             percent = floor(objects[i].confidence * 100);
             text(objects[i].label + " " + percent + " % ", objects[i].x + 15 ,  objects[i].y + 15);
